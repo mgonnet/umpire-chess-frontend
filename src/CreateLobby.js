@@ -14,7 +14,6 @@ class CreateLobby extends React.Component {
   }
 
   handleSubmit(event) {
-    alert(JSON.stringify(this.props))
     this.props.onCreateLobby(this.state.value)
     event.preventDefault();
   }
