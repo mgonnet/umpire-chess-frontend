@@ -8,7 +8,6 @@ class App extends React.Component {
     super(props);
     this.state = {value: '', status: 'registering'};
     
-    this.client = UmpireClient({url: 'ws://localhost:3000', WSConstructor: WebSocket})
     this.handleRegister = this.handleRegister.bind(this);
   }
 

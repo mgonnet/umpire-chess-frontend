@@ -4,6 +4,6 @@ import './index.css';
 import App from './App'
 import { UmpireClient } from '@mgonnet/umpire-client'
 
-let client = UmpireClient({url: 'ws://localhost:3000', WSConstructor: WebSocket})
+let client = UmpireClient({url: 'ws://umpire-chess.herokuapp.com/', WSConstructor: WebSocket})
 
 ReactDOM.render(<App client={client}/>, document.getElementById('root'));
