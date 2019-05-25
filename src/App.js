@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state = {value: '', status: 'registering'};
     
     this.handleRegister = this.handleRegister.bind(this);
+    this.handleCreateLobby = this.handleCreateLobby.bind(this);
   }
 
   handleRegister(user) {    
@@ -17,27 +18,34 @@ class App extends React.Component {
           status: 'looking'
         })
       }
+    }).catch(() => {
+      
     })
+  }
+
+  handleCreateLobby(lobbyName) {
+    this.props.client.createLobby(lobbyName)
   }
 
 
   render() {
-    if(this.state.status === 'registering'){
-      return (
-        <NameForm onRegister={this.handleRegister}/>
-      );
-    }else if(this.state.status === 'looking'){
-      return (
-        <LobbyBrowser />
-      )
-    }else{
+    switch (this.state.status) {
+      case 'registering':
+        return(
+          <NameForm onRegister={this.handleRegister}/>
+        )
+      case 'looking':
+        return(
+          <LobbyBrowser onCreateLobby={this.handleCreateLobby}/>
+        )
+    
+      default:
       return (
         <div>
           <p>Algo se rompio</p>
         </div>
       )
-    }
-    
+    }      
   }
 }
 

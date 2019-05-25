@@ -1,27 +1,17 @@
 import React from 'react';
+import CreateLobby from './CreateLobby';
 
 class LobbyBrowser extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    this.props.handleRegister(this.state.value)
-    event.preventDefault();
+    this.state = { };
   }
 
   render() {
     return (
       <div>
         <p>Aca vamos a buscar lobbies</p>
+        <CreateLobby onCreateLobby={this.props.onCreateLobby} />
       </div>
     );  
   }
