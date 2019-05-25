@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NameForm extends React.Component {
+class LobbyBrowser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -14,21 +14,17 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.onRegister(this.state.value)
+    this.props.handleRegister(this.state.value)
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <p>Aca vamos a buscar lobbies</p>
+      </div>
     );  
   }
 }
 
-export default NameForm;
+export default LobbyBrowser;

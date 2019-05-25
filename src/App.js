@@ -1,6 +1,7 @@
 import React from 'react';
 import { UmpireClient } from '@mgonnet/umpire-client'
 import NameForm from './NameForm'
+import LobbyBrowser from './LobbyBrowser';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,17 +12,26 @@ class App extends React.Component {
     this.handleRegister = this.handleRegister.bind(this);
   }
 
-  handleRegister(user) {
-    alert('gil')
-    this.client.register(user)
+  handleRegister(user) {    
+    this.props.client.register(user).then((response) => {
+      if(response === 'OK'){
+        this.setState({
+          status: 'looking'
+        })
+      }
+    })
   }
 
 
   render() {
     if(this.state.status === 'registering'){
       return (
-        <NameForm handleRegister={this.props.client.register}/>
+        <NameForm onRegister={this.handleRegister}/>
       );
+    }else if(this.state.status === 'looking'){
+      return (
+        <LobbyBrowser />
+      )
     }else{
       return (
         <div>
