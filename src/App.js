@@ -1,5 +1,4 @@
 import React from 'react';
-import { UmpireClient } from '@mgonnet/umpire-client'
 import NameForm from './NameForm'
 import LobbyBrowser from './LobbyBrowser';
 
