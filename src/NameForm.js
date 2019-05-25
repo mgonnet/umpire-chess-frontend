@@ -14,17 +14,15 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('gilo')    
     this.props.handleRegister(this.state.value)
     event.preventDefault();
   }
 
   render() {
-    let gil = this.props.scale
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Name: {gil}
+          Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
