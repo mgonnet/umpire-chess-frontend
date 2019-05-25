@@ -1,6 +1,6 @@
 import React from 'react';
 import NameForm from './NameForm'
-import LobbyBrowser from './LobbyBrowser';
+import LobbyBrowser from './LobbyBrowser/LobbyBrowser';
 
 class App extends React.Component {
   constructor(props) {
