@@ -1,6 +1,7 @@
 import React from 'react';
 import NameForm from './NameForm'
 import LobbyBrowser from './LobbyBrowser/LobbyBrowser';
+import Lobby from './Lobby/Lobby';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,17 @@ class App extends React.Component {
   }
 
   handleCreateLobby(lobbyName) {
-    this.props.client.createLobby(lobbyName)
+    this.props.client.createLobby(lobbyName).then((response) => {
+      if(response === 'OK'){
+        this.setState({
+          status: 'hosting',
+          lobbyName,
+          type: 'creator'
+        })
+      }
+    }).catch(() => {
+      
+    })
   }
 
 
@@ -37,6 +48,10 @@ class App extends React.Component {
       case 'looking':
         return(
           <LobbyBrowser onCreateLobby={this.handleCreateLobby}/>
+        )
+      case 'hosting':
+        return(
+          <Lobby name={this.state.lobbyName} />
         )
     
       default:
