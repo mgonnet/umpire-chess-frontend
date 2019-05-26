@@ -1,4 +1,5 @@
 import React from 'react';
+import PlayerDetail from '../PlayerDetail';
 
 class Lobby extends React.Component {
   constructor(props) {
@@ -7,10 +8,18 @@ class Lobby extends React.Component {
   }
 
   render() {
+    let playerList = this.props.players.map((player) =>
+      <PlayerDetail name={player.name} />
+    )
     return (
       <div>
         <p>Estas en el lobby: - {this.props.name}!</p>
-        <p>Players: {JSON.stringify(this.props.players)}</p>
+        {playerList.length > 0 &&
+          <div>
+            <p>Players:</p>
+            {playerList}
+          </div>
+        }
       </div>
     );  
   }

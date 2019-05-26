@@ -31,6 +31,7 @@ class App extends React.Component {
         this.setState({
           status: 'hosting',
           lobbyName,
+          players: []
         })
       }
     }).catch(() => {
@@ -66,7 +67,10 @@ class App extends React.Component {
         )
       case 'hosting':
         return(
-          <Lobby name={this.state.lobbyName} />
+          <Lobby 
+            name={this.state.lobbyName}
+            players={this.state.players} 
+          />
         )
       case 'joined':
         return(
