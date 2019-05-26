@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateLobby from './CreateLobby';
+import JoinLobby from './JoinLobby';
 
 class LobbyBrowser extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class LobbyBrowser extends React.Component {
       <div>
         <p>Aca vamos a buscar lobbies</p>
         <CreateLobby onCreateLobby={this.props.onCreateLobby} />
+        <JoinLobby onJoinLobby={this.props.onJoinLobby} />
       </div>
     );  
   }

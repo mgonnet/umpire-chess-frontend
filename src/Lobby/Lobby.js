@@ -10,6 +10,7 @@ class Lobby extends React.Component {
     return (
       <div>
         <p>Estas en el lobby: - {this.props.name}!</p>
+        <p>Players: {JSON.stringify(this.props.players)}</p>
       </div>
     );  
   }

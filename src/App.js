@@ -10,6 +10,7 @@ class App extends React.Component {
     
     this.handleRegister = this.handleRegister.bind(this);
     this.handleCreateLobby = this.handleCreateLobby.bind(this);
+    this.handleJoinLobby = this.handleJoinLobby.bind(this)
   }
 
   handleRegister(user) {    
@@ -30,9 +31,20 @@ class App extends React.Component {
         this.setState({
           status: 'hosting',
           lobbyName,
-          type: 'creator'
         })
       }
+    }).catch(() => {
+      
+    })
+  }
+
+  handleJoinLobby(lobbyName){    
+    this.props.client.joinLobby(lobbyName).then((players) => {
+      this.setState({
+        status: 'joined',
+        lobbyName,
+        players
+      })
     }).catch(() => {
       
     })
@@ -47,11 +59,21 @@ class App extends React.Component {
         )
       case 'looking':
         return(
-          <LobbyBrowser onCreateLobby={this.handleCreateLobby}/>
+          <LobbyBrowser 
+            onCreateLobby={this.handleCreateLobby}
+            onJoinLobby={this.handleJoinLobby}
+          />
         )
       case 'hosting':
         return(
           <Lobby name={this.state.lobbyName} />
+        )
+      case 'joined':
+        return(
+          <Lobby 
+            name={this.state.lobbyName} 
+            players={this.state.players}
+          />
         )
     
       default:
