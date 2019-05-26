@@ -4,11 +4,11 @@ import PlayerDetail from '../PlayerDetail';
 class Lobby extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = { players: this.props.players};
   }
 
   render() {
-    let playerList = this.props.players.map((player) =>
+    let playerList = this.state.players.map((player) =>
       <PlayerDetail name={player.name} />
     )
     return (
