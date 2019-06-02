@@ -4,7 +4,11 @@ import PlayerDetail from '../PlayerDetail';
 class Lobby extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { players: this.props.players};
+    this.client = this.props.client
+  
+    this.state = { 
+      players: this.props.lobbyInfo.players
+    };
   }
 
   render() {

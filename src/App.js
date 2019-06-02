@@ -27,24 +27,22 @@ class App extends React.Component {
 
   handleCreateLobby(lobbyName) {
     this.props.client.createLobby(lobbyName).then((response) => {
-      if(response === 'OK'){
-        this.setState({
-          status: 'hosting',
-          lobbyName,
-          players: []
-        })
-      }
+      this.setState({
+        status: 'hosting',
+        lobbyName,
+        lobbyInfo: response
+      })
     }).catch(() => {
       
     })
   }
 
   handleJoinLobby(lobbyName){    
-    this.props.client.joinLobby(lobbyName).then((players) => {
+    this.props.client.joinLobby(lobbyName).then((response) => {
       this.setState({
         status: 'joined',
         lobbyName,
-        players
+        lobbyInfo: response
       })
     }).catch(() => {
       
@@ -69,14 +67,14 @@ class App extends React.Component {
         return(
           <Lobby 
             name={this.state.lobbyName}
-            players={this.state.players} 
+            lobbyInfo={this.state.lobbyInfo} 
           />
         )
       case 'joined':
         return(
           <Lobby 
             name={this.state.lobbyName} 
-            players={this.state.players}
+            lobbyInfo={this.state.lobbyInfo}
           />
         )
     
