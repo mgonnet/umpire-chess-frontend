@@ -65,7 +65,8 @@ class App extends React.Component {
         )
       case 'hosting':
         return(
-          <Lobby 
+          <Lobby
+            IamCreator={true}
             client={this.props.client}
             name={this.state.lobbyName}
             lobbyInfo={this.state.lobbyInfo} 
@@ -74,9 +75,10 @@ class App extends React.Component {
       case 'joined':
         return(
           <Lobby
+            IamCreator={false}
             client={this.props.client}
             name={this.state.lobbyName} 
-            lobbyInfo={this.state.lobbyInfo}
+            lobbyInfo={this.state.lobbyInfo}            
           />
         )
     

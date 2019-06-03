@@ -7,7 +7,8 @@ class Lobby extends React.Component {
     this.client = this.props.client
   
     this.state = { 
-      players: this.props.lobbyInfo.players
+      players: this.props.lobbyInfo.players,
+      creator: this.props.lobbyInfo.creator
     };
 
     this.chooseRolHandler = this.chooseRolHandler.bind(this)
@@ -37,6 +38,9 @@ class Lobby extends React.Component {
           players={this.state.players}
           onChooseRol={this.chooseRolHandler}
         />
+        {this.props.IamCreator && 
+          <button>Start Game!</button>
+        }
       </div>
     );  
   }
