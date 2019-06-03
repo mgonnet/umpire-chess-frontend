@@ -9,6 +9,16 @@ class Lobby extends React.Component {
     this.state = { 
       players: this.props.lobbyInfo.players
     };
+
+    this.chooseRolHandler = this.chooseRolHandler.bind(this)
+  }
+
+  chooseRolHandler(event){
+    this.client.chooseRol(event.target.value).then(({players}) => {
+      this.setState({
+        players
+      })
+    })
   }
 
   componentDidMount(){
@@ -23,7 +33,10 @@ class Lobby extends React.Component {
     return (
       <div>
         <p>Estas en el lobby: - {this.props.name}!</p>
-        <PlayersList players={this.state.players} />
+        <PlayersList 
+          players={this.state.players}
+          onChooseRol={this.chooseRolHandler}
+        />
       </div>
     );  
   }
