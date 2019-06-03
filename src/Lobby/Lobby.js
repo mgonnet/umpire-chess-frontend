@@ -12,6 +12,7 @@ class Lobby extends React.Component {
     };
 
     this.chooseRolHandler = this.chooseRolHandler.bind(this)
+    this.startGameHandler = this.startGameHandler.bind(this)
   }
 
   chooseRolHandler(event){
@@ -22,11 +23,21 @@ class Lobby extends React.Component {
     })
   }
 
+  startGameHandler(){
+    this.client.startGame().then((lobbyInfo) => {
+      this.props.onGameStart(lobbyInfo)
+    })
+  }
+
   componentDidMount(){
     this.client.addEventListener('LOBBY-UPDATE', (lobbyInfo) => {
       this.setState({
         players: lobbyInfo.players
       })
+    })
+
+    this.client.addEventListener('GAME-START', (lobbyInfo) => {
+      this.props.onGameStart(lobbyInfo)
     })
   }
 
@@ -39,7 +50,7 @@ class Lobby extends React.Component {
           onChooseRol={this.chooseRolHandler}
         />
         {this.props.IamCreator && 
-          <button>Start Game!</button>
+          <button onClick={this.startGameHandler}>Start Game!</button>
         }
       </div>
     );  

@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "chess.js": "^0.10.2",
     "surge": "^0.20.5"
   }
 }
