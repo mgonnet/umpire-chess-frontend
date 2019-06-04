@@ -52,9 +52,11 @@ class App extends React.Component {
     })
   }
 
-  handleGameStart(){
+  handleGameStart(lobbyInfo){
+    console.log(lobbyInfo.gameState)
     this.setState({
-      status: 'playing'
+      status: 'playing',
+      lobbyInfo
     })
   }
 
@@ -94,7 +96,10 @@ class App extends React.Component {
         )
       case 'playing':
         return(
-          <Game />
+          <Game 
+            players={this.state.lobbyInfo.players}
+            initialGameState={this.state.lobbyInfo.gameState}
+          />
         )
       
       default:

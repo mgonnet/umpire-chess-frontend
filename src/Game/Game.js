@@ -14,6 +14,7 @@ class Game extends React.Component {
     return (
       <div>
         <p>Estas en el juego!</p>
+        <pre>{this.props.initialGameState}</pre>
       </div>
     );  
   }
