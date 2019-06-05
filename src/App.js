@@ -96,7 +96,8 @@ class App extends React.Component {
         )
       case 'playing':
         return(
-          <Game 
+          <Game
+            client={this.props.client}
             players={this.state.lobbyInfo.players}
             initialGameState={this.state.lobbyInfo.gameState}
           />
