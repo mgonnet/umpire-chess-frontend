@@ -18,6 +18,7 @@ class App extends React.Component {
 
   handleRegister(user) {    
     this.props.client.register(user).then((response) => {
+      window.addEventListener('beforeunload', this.props.client.leave)
       if(response === 'OK'){
         this.setState({
           status: 'looking'
