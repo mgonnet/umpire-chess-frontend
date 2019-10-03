@@ -20,12 +20,18 @@ class NameForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+      <form class="smallForm" onSubmit={this.handleSubmit}>
+        <input 
+          type="text" 
+          class="inputText" 
+          value={this.state.value} 
+          onChange={this.handleChange}
+          placeholder="Player Name"
+        />
+        <input 
+          type="submit"
+          class="boton"
+          value="Join Server" />
       </form>
     );  
   }

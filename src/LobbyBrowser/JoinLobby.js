@@ -21,11 +21,16 @@ class JoinLobby extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Lobby Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Join" />
+        <input 
+          type="text"
+          class="inputText"
+          placeholder="Lobby Name"
+          value={this.state.value} 
+          onChange={this.handleChange} />
+        <input 
+          type="submit"
+          class="boton"
+          value="Join" />
       </form>
     );  
   }

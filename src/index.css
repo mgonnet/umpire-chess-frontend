@@ -5,9 +5,53 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #403D58
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.inputText {
+  border: 0;
+  border-bottom: 2px solid #C14566;  
+  font-size: 30px;
+  line-height: 35px;
+  height: 45 px;
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+	color: white;
+}
+
+input:focus { 
+  outline: none !important;  
+  box-shadow: 0 0 10px #C14566;
+}
+
+.boton {
+  display: inline-block;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 30px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+  box-sizing: border-box;
+  background: #C14566;
+  border-color: #C14566;
+  color: white;
+  margin-top: 15px;
+}
+
+.smallForm {
+  position: relative;
+  max-width: 400px;
+  margin: 150px auto 0;
 }

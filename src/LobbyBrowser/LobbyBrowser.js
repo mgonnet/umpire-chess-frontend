@@ -10,7 +10,7 @@ class LobbyBrowser extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="smallForm">
         <p>Aca vamos a buscar lobbies</p>
         <CreateLobby onCreateLobby={this.props.onCreateLobby} />
         <JoinLobby onJoinLobby={this.props.onJoinLobby} />
