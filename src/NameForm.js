@@ -20,7 +20,7 @@ class NameForm extends React.Component {
 
   render() {
     return (
-      <form class="smallForm" onSubmit={this.handleSubmit}>
+      <form class="smallForm loginForm" onSubmit={this.handleSubmit}>
         <input 
           type="text" 
           class="inputText" 

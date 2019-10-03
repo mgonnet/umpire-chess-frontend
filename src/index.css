@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -33,7 +37,11 @@ input:focus {
   box-shadow: 0 0 10px #C14566;
 }
 
-.boton {
+.buttonContainer {
+  
+}
+
+.boton {  
   display: inline-block;
   width: 100%;
   min-height: 38px;
@@ -56,5 +64,19 @@ input:focus {
 .smallForm {
   position: relative;
   max-width: 300px;
-  margin: 150px auto 0;
+  margin: 0 auto 0;
+}
+
+.loginForm {
+  margin-top: 150px;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  font-size: 4.2rem;
+  line-height: 1.25;
+  font-size: 3rem;
+  color: white;
 }
