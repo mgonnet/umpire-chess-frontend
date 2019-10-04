@@ -27,15 +27,16 @@ class Game extends React.Component {
     this.setState({valueTo: event.target.value});
   }
 
-  handleMove(){
-    this.client.move({from: this.state.valueFrom, to: this.state.valueTo}).then((lobbyInfo) => {
-      this.setState({gameState: lobbyInfo.gameState})
+  handleMove(destination){
+    console.log('voy a mover', destination, this.state.selected)
+    this.client.move({from: this.state.selected.square, to: destination}).then((lobbyInfo) => {
+      this.setState({gameState: lobbyInfo.gameState, moves: null, selected: null})
     })
   }
 
-  handleCheckMoves(options) {
-    let moves = this.client.moves(options)
-    this.setState({moves})
+  handleCheckMoves(selected) {
+    let moves = this.client.moves(selected)
+    this.setState({moves, selected})
   }
 
   componentDidMount(){
@@ -53,7 +54,8 @@ class Game extends React.Component {
         <ChessBoard 
           pieces={this.state.gameState}
           moves={this.state.moves}
-          onCheckMoves={this.handleCheckMoves}>            
+          onCheckMoves={this.handleCheckMoves}
+          onMove={this.handleMove}>          
         </ChessBoard>
         <p>Estas en el juego!</p> 
           <label>

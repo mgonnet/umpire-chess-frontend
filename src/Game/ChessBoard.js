@@ -32,11 +32,15 @@ class ChessBoard extends React.Component {
   constructor(props) {
     super(props)
     this.handleCheckMoves = this.handleCheckMoves.bind(this)
+    this.handleMove = this.handleMove.bind(this)
   }
 
   handleCheckMoves(position){    
-    console.log(position, '+++++++')    
     this.props.onCheckMoves(position)
+  }
+
+  handleMove(destination) {
+    this.props.onMove(destination)
   }
 
   render() {
@@ -75,7 +79,6 @@ class ChessBoard extends React.Component {
     })
 
     let moves = null;
-    console.log('moves', this.props.moves)
     // Moves
     if(this.props.moves){
       moves = this.props.moves.map((move) => {
@@ -85,7 +88,10 @@ class ChessBoard extends React.Component {
             class="move"
             style={{ 
               gridColumn: `${coord.column}/${coord.column}`,
-              gridRow: `${coord.row}/${coord.row}` }}>
+              gridRow: `${coord.row}/${coord.row}` }}
+            onClick={this.handleMove.bind(null,move.to)}
+            key={`move-${move.to}`}>
+            >
           </div>
         )
       })

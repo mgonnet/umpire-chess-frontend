@@ -4,6 +4,8 @@
   grid-template-rows: repeat(8, 1fr);
   width: 100%;
   height: 100%;
+  align-items: center;
+  justify-items: center;
 }
 
 .boardContainer {
@@ -13,10 +15,14 @@
 
 .cellWhite {
   background: #398277;
+  width: 100%;
+  height: 100%;
 }
 
 .cellBlack {
   background: #403D58;
+  width: 100%;
+  height: 100%;
 }
 
 .blackPiece {
@@ -35,5 +41,5 @@
   background: yellow;
   height: 75%;
   width: 75%;
-  border-radius: 50%;
+  border-radius: 50%;  
 }
