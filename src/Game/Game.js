@@ -5,7 +5,6 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.client = this.props.client
-    console.log(this.client)
     this.state = { 
       valueFrom: '',
       valueTo: '',
@@ -35,6 +34,7 @@ class Game extends React.Component {
   }
 
   handleCheckMoves(selected) {
+    console.log('voy a chequear', selected)
     let moves = this.client.moves(selected)
     this.setState({moves, selected})
   }
@@ -48,7 +48,6 @@ class Game extends React.Component {
   }
 
   render() {
-    console.log('----', this.handleCheckMoves)
     return (
       <div>
         <ChessBoard 

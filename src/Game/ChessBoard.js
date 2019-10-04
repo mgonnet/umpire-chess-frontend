@@ -65,7 +65,6 @@ class ChessBoard extends React.Component {
       let column = piece.square.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
       let row = '9'.charCodeAt(0) - piece.square.charCodeAt(1)
       let color = piece.piece.color === 'b' ? 'blackPiece' : 'whitePiece';
-      console.log(piece.square, column, row)
       
       return (
         <div 
@@ -86,12 +85,12 @@ class ChessBoard extends React.Component {
         return (
           <div
             class="move"
-            style={{ 
+            style={{
+              zIndex: 100, 
               gridColumn: `${coord.column}/${coord.column}`,
               gridRow: `${coord.row}/${coord.row}` }}
             onClick={this.handleMove.bind(null,move.to)}
-            key={`move-${move.to}`}>
-            >
+            key={`move-${move.to}`}>            
           </div>
         )
       })

@@ -54,7 +54,6 @@ class App extends React.Component {
   }
 
   handleGameStart({lobbyInfo, gameInfo}){
-    console.log(lobbyInfo.gameState)
     this.setState({
       status: 'playing',
       lobbyInfo,
