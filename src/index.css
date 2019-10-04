@@ -1,5 +1,7 @@
 html {
   font-size: 62.5%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -35,10 +37,6 @@ code {
 input:focus { 
   outline: none !important;  
   box-shadow: 0 0 10px #C14566;
-}
-
-.buttonContainer {
-  
 }
 
 .boton {  

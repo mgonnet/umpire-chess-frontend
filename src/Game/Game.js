@@ -1,4 +1,5 @@
 import React from 'react';
+import ChessBoard from  './ChessBoard'
 
 class Game extends React.Component {
   constructor(props) {
@@ -38,9 +39,10 @@ class Game extends React.Component {
     })
   }
 
-  render() {  
+  render() {
     return (
       <div>
+        <ChessBoard></ChessBoard>
         <p>Estas en el juego!</p>
         <pre>{this.state.gameState}</pre>        
           <label>
