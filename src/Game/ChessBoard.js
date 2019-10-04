@@ -1,6 +1,15 @@
 import React from 'react';
 import '../styles/chessboard.css'
 
+const pieceMapping = {
+  'r': '♜',
+  'n': '♞',
+  'b': '♝',
+  'q': '♛',
+  'k': '♚',
+  'p': '♟'
+}
+
 class ChessBoard extends React.Component {
   constructor(props) {
     super(props)
@@ -18,12 +27,21 @@ class ChessBoard extends React.Component {
       }
     }
 
+    
+
+    let pieces = this.props.pieces.map((piece) => {      
+      let column = piece.square.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+      let row = '9'.charCodeAt(0) - piece.square.charCodeAt(1)
+      let color = piece.piece.color === 'b' ? 'blackPiece' : 'whitePiece';
+      console.log(piece.square, column, row)
+      return <div class={color} style={{ gridColumn: `${column}/${column}`, gridRow: `${row}/${row}` }}>{pieceMapping[piece.piece.type]}</div>
+    })
+
     return (
       <div class="boardContainer">
         <div class="chessBoard">
           {cells}
-          <div class="cell" style={{ gridColumn: '4/4', gridRow: '2/2' }}>&#9818;</div>
-          <div class="cell" style={{ gridColumn: '4/4', gridRow: '1/1' }}>&#9812;</div>
+          {pieces}
         </div>
       </div>
     )

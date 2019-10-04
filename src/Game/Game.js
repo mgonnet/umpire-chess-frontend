@@ -42,9 +42,8 @@ class Game extends React.Component {
   render() {
     return (
       <div>
-        <ChessBoard></ChessBoard>
-        <p>Estas en el juego!</p>
-        <pre>{this.state.gameState}</pre>        
+        <ChessBoard pieces={this.state.gameState}></ChessBoard>
+        <p>Estas en el juego!</p> 
           <label>
             From
             <input type="text" value={this.state.value} onChange={this.handleChangeFrom} />

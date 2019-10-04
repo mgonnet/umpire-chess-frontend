@@ -19,7 +19,13 @@
   background: #403D58;
 }
 
-.cell {
+.blackPiece {
+  color: #C14566;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.whitePiece {
   color: white;
   font-size: 3rem;
   text-align: center;

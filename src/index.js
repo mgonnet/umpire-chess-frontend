@@ -9,7 +9,7 @@ const FakeChess = new Proxy(Chess, {
     construct: function (Target, args) {
         const myFake = new Target(...args)
         // @ts-ignore
-        myFake.state = () => myFake.ascii()
+        myFake.state = () => myFake.SQUARES.map((square) => ({square, piece: myFake.get(square)})).filter((square) => square.piece!==null)
         console.log('bablbalbla')
         return myFake
     }
