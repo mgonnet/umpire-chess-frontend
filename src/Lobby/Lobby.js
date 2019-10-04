@@ -24,8 +24,8 @@ class Lobby extends React.Component {
   }
 
   startGameHandler(){
-    this.client.startGame().then((lobbyInfo) => {
-      this.props.onGameStart(lobbyInfo)
+    this.client.startGame().then((info) => {
+      this.props.onGameStart(info)
     })
   }
 

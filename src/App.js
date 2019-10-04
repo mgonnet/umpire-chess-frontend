@@ -53,11 +53,12 @@ class App extends React.Component {
     })
   }
 
-  handleGameStart(lobbyInfo){
+  handleGameStart({lobbyInfo, gameInfo}){
     console.log(lobbyInfo.gameState)
     this.setState({
       status: 'playing',
-      lobbyInfo
+      lobbyInfo,
+      gameInfo     
     })
   }
 
@@ -100,7 +101,7 @@ class App extends React.Component {
           <Game
             client={this.props.client}
             players={this.state.lobbyInfo.players}
-            initialGameState={this.state.lobbyInfo.gameState}
+            initialGameState={this.state.gameInfo.gameState}
           />
         )
       

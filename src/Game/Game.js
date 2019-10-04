@@ -9,12 +9,14 @@ class Game extends React.Component {
     this.state = { 
       valueFrom: '',
       valueTo: '',
-      gameState: this.props.initialGameState
+      gameState: this.props.initialGameState,
+      moves: null      
     };
 
     this.handleChangeFrom = this.handleChangeFrom.bind(this)
     this.handleChangeTo = this.handleChangeTo.bind(this)
     this.handleMove = this.handleMove.bind(this)
+    this.handleCheckMoves = this.handleCheckMoves.bind(this)
   }
 
   handleChangeFrom(event){
@@ -31,6 +33,11 @@ class Game extends React.Component {
     })
   }
 
+  handleCheckMoves(options) {
+    let moves = this.client.moves(options)
+    this.setState({moves})
+  }
+
   componentDidMount(){
     this.client.addEventListener('MOVE', (lobbyInfo) => {
       this.setState({
@@ -40,9 +47,14 @@ class Game extends React.Component {
   }
 
   render() {
+    console.log('----', this.handleCheckMoves)
     return (
       <div>
-        <ChessBoard pieces={this.state.gameState}></ChessBoard>
+        <ChessBoard 
+          pieces={this.state.gameState}
+          moves={this.state.moves}
+          onCheckMoves={this.handleCheckMoves}>            
+        </ChessBoard>
         <p>Estas en el juego!</p> 
           <label>
             From
