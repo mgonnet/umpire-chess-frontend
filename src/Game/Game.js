@@ -6,24 +6,12 @@ class Game extends React.Component {
     super(props);
     this.client = this.props.client
     this.state = { 
-      valueFrom: '',
-      valueTo: '',
       gameState: this.props.initialGameState,
       moves: null      
     };
 
-    this.handleChangeFrom = this.handleChangeFrom.bind(this)
-    this.handleChangeTo = this.handleChangeTo.bind(this)
     this.handleMove = this.handleMove.bind(this)
     this.handleCheckMoves = this.handleCheckMoves.bind(this)
-  }
-
-  handleChangeFrom(event){
-    this.setState({valueFrom: event.target.value});
-  }
-
-  handleChangeTo(event){
-    this.setState({valueTo: event.target.value});
   }
 
   handleMove(destination){
@@ -42,7 +30,9 @@ class Game extends React.Component {
   componentDidMount(){
     this.client.addEventListener('MOVE', (lobbyInfo) => {
       this.setState({
-        gameState: lobbyInfo.gameState
+        gameState: lobbyInfo.gameState,
+        moves: null,
+        selected: null
       })
     })
   }
@@ -55,17 +45,7 @@ class Game extends React.Component {
           moves={this.state.moves}
           onCheckMoves={this.handleCheckMoves}
           onMove={this.handleMove}>          
-        </ChessBoard>
-        <p>Estas en el juego!</p> 
-          <label>
-            From
-            <input type="text" value={this.state.value} onChange={this.handleChangeFrom} />
-          </label>
-          <label>
-            To
-            <input type="text" value={this.state.value} onChange={this.handleChangeTo} />
-          </label>
-          <button onClick={this.handleMove}>pepe</button>      
+        </ChessBoard>        
       </div>
     );  
   }

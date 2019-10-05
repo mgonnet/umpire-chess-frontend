@@ -10,7 +10,8 @@
 
 .boardContainer {
   width: 50vh;
-  height: 50vh; 
+  height: 50vh, 50vw;
+  display: grid;
 }
 
 .cellWhite {
@@ -38,7 +39,7 @@
 }
 
 .move {
-  background: yellow;
+  background: #FFD45E;
   height: 75%;
   width: 75%;
   border-radius: 50%;  
