@@ -6,7 +6,7 @@ class Game extends React.Component {
     super(props);
     this.client = this.props.client
     this.state = { 
-      gameState: this.props.initialGameState,
+      gameState: this.props.gameInfo.gameState,
       moves: null      
     };
 
@@ -16,21 +16,21 @@ class Game extends React.Component {
 
   handleMove(destination){
     console.log('voy a mover', destination, this.state.selected)
-    this.client.move({from: this.state.selected.square, to: destination}).then((lobbyInfo) => {
-      this.setState({gameState: lobbyInfo.gameState, moves: null, selected: null})
+    this.client.move({from: this.state.selected.square, to: destination}).then(({gameInfo}) => {
+      this.setState({gameState: gameInfo.gameState, moves: null, selected: null})
     })
   }
 
   handleCheckMoves(selected) {
     console.log('voy a chequear', selected)
-    let moves = this.client.moves(selected)
+    let { moves } = this.client.moves(selected)
     this.setState({moves, selected})
   }
 
   componentDidMount(){
-    this.client.addEventListener('MOVE', (lobbyInfo) => {
+    this.client.addEventListener('MOVE', ({gameInfo}) => {
       this.setState({
-        gameState: lobbyInfo.gameState,
+        gameState: gameInfo.gameState,
         moves: null,
         selected: null
       })

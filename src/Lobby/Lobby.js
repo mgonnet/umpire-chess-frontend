@@ -16,7 +16,7 @@ class Lobby extends React.Component {
   }
 
   chooseRolHandler(event){
-    this.client.chooseRol(event.target.value).then(({players}) => {
+    this.client.chooseRol(event.target.value).then(({lobbyInfo: {players}}) => {
       this.setState({
         players
       })
@@ -30,7 +30,7 @@ class Lobby extends React.Component {
   }
 
   componentDidMount(){
-    this.client.addEventListener('LOBBY-UPDATE', (lobbyInfo) => {
+    this.client.addEventListener('LOBBY-UPDATE', ({lobbyInfo}) => {
       this.setState({
         players: lobbyInfo.players
       })
