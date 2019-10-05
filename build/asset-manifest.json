@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/umpire-chess-frontend/build/static/css/main.725b9b96.chunk.css",
+    "main.css": "/umpire-chess-frontend/build/static/css/main.da33d872.chunk.css",
     "main.js": "/umpire-chess-frontend/build/static/js/main.acfbc74e.chunk.js",
     "main.js.map": "/umpire-chess-frontend/build/static/js/main.acfbc74e.chunk.js.map",
     "runtime~main.js": "/umpire-chess-frontend/build/static/js/runtime~main.f32eb37e.js",
@@ -8,8 +8,8 @@
     "static/js/2.4dba254a.chunk.js": "/umpire-chess-frontend/build/static/js/2.4dba254a.chunk.js",
     "static/js/2.4dba254a.chunk.js.map": "/umpire-chess-frontend/build/static/js/2.4dba254a.chunk.js.map",
     "index.html": "/umpire-chess-frontend/build/index.html",
-    "precache-manifest.994c141d16c31aded237a12d135d5a2a.js": "/umpire-chess-frontend/build/precache-manifest.994c141d16c31aded237a12d135d5a2a.js",
+    "precache-manifest.f7ab0bcf4c41b9073dc6c2cfa5fe122b.js": "/umpire-chess-frontend/build/precache-manifest.f7ab0bcf4c41b9073dc6c2cfa5fe122b.js",
     "service-worker.js": "/umpire-chess-frontend/build/service-worker.js",
-    "static/css/main.725b9b96.chunk.css.map": "/umpire-chess-frontend/build/static/css/main.725b9b96.chunk.css.map"
+    "static/css/main.da33d872.chunk.css.map": "/umpire-chess-frontend/build/static/css/main.da33d872.chunk.css.map"
   }
 }

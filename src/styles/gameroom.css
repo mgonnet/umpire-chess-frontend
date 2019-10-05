@@ -1,7 +1,7 @@
 @media all and (orientation: landscape) and (min-height: 401px) {
   #gameRoom {
     display: grid;
-    grid-template-columns: 1fr 50vh 0.5fr 0.5fr 4fr 1fr;
+    grid-template-columns: 1fr 50vh 1fr 1fr 4fr 1fr;
     grid-template-rows: 1fr 50vh 1fr;
     grid-template-areas: 
       ". . . info info info"
