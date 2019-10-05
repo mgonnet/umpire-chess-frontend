@@ -98,12 +98,10 @@ class ChessBoard extends React.Component {
 
 
     return (
-      <div class="boardContainer">
-        <div class="chessBoard">
-          {cells}
-          {pieces}
-          {moves !== null && moves}
-        </div>
+      <div class="chessBoard">
+        {cells}
+        {pieces}
+        {moves !== null && moves}
       </div>
     )
   }

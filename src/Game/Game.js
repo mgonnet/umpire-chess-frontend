@@ -1,5 +1,6 @@
 import React from 'react';
 import ChessBoard from  './ChessBoard'
+import '../styles/gameroom.css'
 
 class Game extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Game extends React.Component {
 
     this.handleMove = this.handleMove.bind(this)
     this.handleCheckMoves = this.handleCheckMoves.bind(this)
+    console.log('gameInfo', this.props.gameInfo, 'lobbyInfo', this.props.lobbyInfo)
   }
 
   handleMove(destination){
@@ -39,13 +41,15 @@ class Game extends React.Component {
 
   render() {
     return (
-      <div>
-        <ChessBoard 
-          pieces={this.state.gameState}
-          moves={this.state.moves}
-          onCheckMoves={this.handleCheckMoves}
-          onMove={this.handleMove}>          
-        </ChessBoard>        
+      <div id="gameRoom">
+        <div id="boardContainer">
+          <ChessBoard 
+            pieces={this.state.gameState}
+            moves={this.state.moves}
+            onCheckMoves={this.handleCheckMoves}
+            onMove={this.handleMove}>          
+          </ChessBoard>
+        </div>
       </div>
     );  
   }

@@ -1,0 +1,35 @@
+@media all and (orientation: landscape) {
+  #gameRoom {
+    display: grid;
+    grid-template-columns: 1fr 50vh 1fr 4fr;
+    grid-template-rows: 1fr 50vh 1fr;
+    grid-template-areas: 
+      ". . . ."
+      ". board . ."
+      ". . . .";
+    width: 100%;
+    height: 100%;
+    font-size: 5vh;
+  }
+}
+
+@media all and (orientation: portrait) {
+  #gameRoom {
+    display: grid;
+    grid-template-columns: 1fr 80vw 1fr;
+    grid-template-rows: 1fr 80vw 6fr;
+    grid-template-areas: 
+      ". . ."
+      ". board ."
+      ". . .";
+    width: 100%;
+    height: 100%;
+    font-size: 8vw;
+  }
+}
+
+
+#boardContainer {
+  grid-area: board;
+  display: grid;
+}

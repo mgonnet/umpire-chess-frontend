@@ -8,12 +8,6 @@
   justify-items: center;
 }
 
-.boardContainer {
-  width: 50vh;
-  height: 50vh, 50vw;
-  display: grid;
-}
-
 .cellWhite {
   background: #398277;
   width: 100%;
@@ -28,13 +22,11 @@
 
 .blackPiece {
   color: #C14566;
-  font-size: 3rem;
   text-align: center;
 }
 
 .whitePiece {
   color: white;
-  font-size: 3rem;
   text-align: center;
 }
 
