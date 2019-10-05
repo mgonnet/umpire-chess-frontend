@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fcd90d300748bd763d1529537e4d990b",
+    "revision": "37cbaeb5c7565a31072ffdf0f51f26b0",
     "url": "/umpire-chess-frontend/build/index.html"
   },
   {
-    "revision": "134aba57ea46ca9a2fe1",
-    "url": "/umpire-chess-frontend/build/static/css/main.db81a732.chunk.css"
+    "revision": "604b0c6bbf4d33310fa6",
+    "url": "/umpire-chess-frontend/build/static/css/main.fc53cc12.chunk.css"
   },
   {
     "revision": "9bbd613f21cbc7c29d4a",
     "url": "/umpire-chess-frontend/build/static/js/2.4dba254a.chunk.js"
   },
   {
-    "revision": "134aba57ea46ca9a2fe1",
+    "revision": "604b0c6bbf4d33310fa6",
     "url": "/umpire-chess-frontend/build/static/js/main.7862f5e5.chunk.js"
   },
   {

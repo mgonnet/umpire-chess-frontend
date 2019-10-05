@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/umpire-chess-frontend/build/precache-manifest.58529c5ff9d823abc6fcf8ee99a7ef99.js"
+  "/umpire-chess-frontend/build/precache-manifest.e8b86462ca3bc3c837c075abc2156b6e.js"
 );
 
 self.addEventListener('message', (event) => {
