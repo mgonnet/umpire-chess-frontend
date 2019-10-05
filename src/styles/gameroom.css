@@ -1,12 +1,12 @@
 @media all and (orientation: landscape) and (min-height: 401px) {
   #gameRoom {
     display: grid;
-    grid-template-columns: 1fr 50vh 1fr 4fr;
+    grid-template-columns: 1fr 50vh 0.5fr 0.5fr 4fr 1fr;
     grid-template-rows: 1fr 50vh 1fr;
     grid-template-areas: 
-      ". . . ."
-      ". board . ."
-      ". . . .";
+      ". . . info info info"
+      ". board . info info info"
+      ". . . info info info";
     width: 100%;
     height: 100%;
     font-size: 5vh;
@@ -17,11 +17,14 @@
   #gameRoom {
     display: grid;
     grid-template-columns: 1fr 80vw 1fr;
-    grid-template-rows: 1fr 80vw 6fr;
+    grid-template-rows: 1fr 80vw 1fr 1fr 6fr 1fr;
     grid-template-areas: 
       ". . ."
       ". board ."
-      ". . .";
+      ". . ."
+      "info info info"
+      "info info info"
+      "info info info";
     width: 100%;
     height: 100%;
     font-size: 8vw;
@@ -31,21 +34,26 @@
 @media all and (orientation: landscape) and (max-height: 400px){
   #gameRoom {
     display: grid;
-    grid-template-columns: 1fr 80vh 1fr 4fr;
+    grid-template-columns: 1fr 80vh 1fr 1fr 4fr 1fr;
     grid-template-rows: 1fr 80vh 1fr;
     grid-template-areas: 
-      ". . ."
-      ". board ."
-      ". . .";
+      ". . . info info info"
+      ". board . info info info"
+      ". . . info info info";
     width: 100%;
     height: 100%;
     font-size: 8vh;
   }
 }
 
-
-
 #boardContainer {
   grid-area: board;
   display: grid;
+}
+
+#infoContainer {
+  grid-area: info;
+  background: #398277; 
+  width: 100%;
+  height: 100%;
 }

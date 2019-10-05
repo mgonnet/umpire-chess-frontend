@@ -50,6 +50,7 @@ class Game extends React.Component {
             onMove={this.handleMove}>          
           </ChessBoard>
         </div>
+        <div id="infoContainer"></div>
       </div>
     );  
   }

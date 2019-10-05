@@ -70,10 +70,21 @@ input:focus {
 }
 
 
+#registration {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "."
+    "form"
+}
+
 .smallForm {
   position: relative;
   max-width: 300px;
   margin: 0 auto 0;
+  grid-area: form;
+  width: 100%;
 }
 
 h2 {
