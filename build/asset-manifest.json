@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/umpire-chess-frontend/build/static/css/main.da33d872.chunk.css",
-    "main.js": "/umpire-chess-frontend/build/static/js/main.acfbc74e.chunk.js",
-    "main.js.map": "/umpire-chess-frontend/build/static/js/main.acfbc74e.chunk.js.map",
+    "main.css": "/umpire-chess-frontend/build/static/css/main.09ab4a83.chunk.css",
+    "main.js": "/umpire-chess-frontend/build/static/js/main.e5896093.chunk.js",
+    "main.js.map": "/umpire-chess-frontend/build/static/js/main.e5896093.chunk.js.map",
     "runtime~main.js": "/umpire-chess-frontend/build/static/js/runtime~main.f32eb37e.js",
     "runtime~main.js.map": "/umpire-chess-frontend/build/static/js/runtime~main.f32eb37e.js.map",
-    "static/js/2.4dba254a.chunk.js": "/umpire-chess-frontend/build/static/js/2.4dba254a.chunk.js",
-    "static/js/2.4dba254a.chunk.js.map": "/umpire-chess-frontend/build/static/js/2.4dba254a.chunk.js.map",
+    "static/js/2.2275e981.chunk.js": "/umpire-chess-frontend/build/static/js/2.2275e981.chunk.js",
+    "static/js/2.2275e981.chunk.js.map": "/umpire-chess-frontend/build/static/js/2.2275e981.chunk.js.map",
     "index.html": "/umpire-chess-frontend/build/index.html",
-    "precache-manifest.f7ab0bcf4c41b9073dc6c2cfa5fe122b.js": "/umpire-chess-frontend/build/precache-manifest.f7ab0bcf4c41b9073dc6c2cfa5fe122b.js",
+    "precache-manifest.0befc0b84844ed667a44a04106e84241.js": "/umpire-chess-frontend/build/precache-manifest.0befc0b84844ed667a44a04106e84241.js",
     "service-worker.js": "/umpire-chess-frontend/build/service-worker.js",
-    "static/css/main.da33d872.chunk.css.map": "/umpire-chess-frontend/build/static/css/main.da33d872.chunk.css.map"
+    "static/css/main.09ab4a83.chunk.css.map": "/umpire-chess-frontend/build/static/css/main.09ab4a83.chunk.css.map",
+    "static/media/king.svg": "/umpire-chess-frontend/build/static/media/king.c69f5f50.svg",
+    "static/media/king_w.svg": "/umpire-chess-frontend/build/static/media/king_w.fef8c091.svg"
   }
 }

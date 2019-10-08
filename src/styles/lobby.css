@@ -1,0 +1,50 @@
+#lobby {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.lobby-side {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 3fr;
+  grid-template-areas: 
+    ". . ."
+    ". piece ."
+    ". players ."
+    ". . .";
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  width: 100%
+}
+
+#lobby-middle {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 3fr;
+  grid-template-areas: 
+    ". . ."
+    ". players ."
+    ". start ."
+    ". . .";
+  background: #398277;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.lobby-piece {
+  grid-area: piece;
+}
+
+#lobby-spectate-list {
+  grid-area: players;
+}
+
+#start-game {
+  grid-area: start;
+}
