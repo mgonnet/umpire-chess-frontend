@@ -66,7 +66,7 @@ class Lobby extends React.Component {
             src={king}
             onClick={this.chooseRolHandler.bind(null, 'b')}></img>
           <div
-            style={{gridArea: `players`}}>
+            class="lobby-player-list">
             {players_black}
           </div>          
         </div>
@@ -76,7 +76,7 @@ class Lobby extends React.Component {
               id="start-game"
               class="boton"
               onClick={this.startGameHandler}>Start Game!</button>}
-          <div id="lobby-spectate-list">
+          <div class="lobby-player-list">
             {players_spectate}
           </div>                              
         </div>
@@ -86,7 +86,7 @@ class Lobby extends React.Component {
             src={king_w}
             onClick={this.chooseRolHandler.bind(null, 'w')}></img>
           <div
-            style={{gridArea: `players`}}>
+            class="lobby-player-list">
             {players_white}
           </div>
         </div>
