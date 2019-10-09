@@ -19,11 +19,6 @@ class NameForm extends React.Component {
 
     this.props.client.register(this.state.user).then((response) => {
       window.addEventListener('beforeunload', this.props.client.leave)
-      if(response === 'OK'){
-        this.setState({
-          status: 'looking'
-        })
-      }
       this.props.onRegister()
     }).catch((error) => {
       this.setState({
