@@ -1,5 +1,7 @@
 import React from 'react';
 import ChessBoard from  './ChessBoard'
+import GameInfo from './GameInfo'
+
 import '../styles/gameroom.css'
 
 class Game extends React.Component {
@@ -8,7 +10,8 @@ class Game extends React.Component {
     this.client = this.props.client
     this.state = { 
       gameState: this.props.gameInfo.gameState,
-      moves: null      
+      moves: null,
+      turn: this.props.gameInfo.turn 
     };
 
     this.handleMove = this.handleMove.bind(this)
@@ -19,7 +22,7 @@ class Game extends React.Component {
   handleMove(destination){
     console.log('voy a mover', destination, this.state.selected)
     this.client.move({from: this.state.selected.square, to: destination}).then(({gameInfo}) => {
-      this.setState({gameState: gameInfo.gameState, moves: null, selected: null})
+      this.setState({gameState: gameInfo.gameState, moves: null, selected: null, turn:gameInfo.turn})
     })
   }
 
@@ -34,12 +37,16 @@ class Game extends React.Component {
       this.setState({
         gameState: gameInfo.gameState,
         moves: null,
-        selected: null
+        selected: null,
+        turn: gameInfo.turn
       })
     })
   }
 
   render() {
+    let p1 = this.props.lobbyInfo.players.find((player) => player.rol === 'b').name
+    let p2 = this.props.lobbyInfo.players.find((player) => player.rol === 'w').name
+    console.log(this.state, 'asdasdasdasd-------')
     return (
       <div id="gameRoom">
         <div id="boardContainer">
@@ -50,7 +57,13 @@ class Game extends React.Component {
             onMove={this.handleMove}>          
           </ChessBoard>
         </div>
-        <div id="infoContainer"></div>
+        <div id="infoContainer">
+          <GameInfo
+            p1={p1}
+            p2={p2}
+            turn={this.state.turn}>
+          </GameInfo>
+        </div>
       </div>
     );  
   }

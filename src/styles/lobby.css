@@ -8,8 +8,8 @@
 
 .lobby-side {
   display: grid;
-  grid-template-columns: 1fr 40vmin 1fr;
-  grid-template-rows: 1fr 40vmin 1fr 3fr;
+  grid-template-columns: 1fr 30vmin 1fr;
+  grid-template-rows: 1fr 30vmin 1fr 3fr;
   grid-template-areas: 
     ". . ."
     ". piece ."

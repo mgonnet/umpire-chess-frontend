@@ -1,0 +1,46 @@
+#gameinfo {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+    ". turn1 . turn2 ."
+    ". piece1 . player2 ."
+    ". piece1 . piece2 ."
+    ". player1 . piece2 ."
+    ". . . . .";
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+#gameinfo-piece1 {
+  grid-area: piece1;
+}
+
+#gameinfo-piece2 {
+  grid-area: piece2;
+}
+
+#gameinfo-player1 {
+  grid-area: player1;
+}
+
+#gameinfo-player2 {
+  grid-area: player2;
+}
+
+.turn {
+  background: #403D58;
+  height: 75%;
+  width: 75%;
+  border-radius: 50%;
+}
+
+#turn-b {
+  grid-area: turn1;
+}
+
+#turn-w {
+  grid-area: turn2;
+}

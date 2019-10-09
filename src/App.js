@@ -16,16 +16,9 @@ class App extends React.Component {
     this.handleGameStart = this.handleGameStart.bind(this)
   }
 
-  handleRegister(user) {    
-    this.props.client.register(user).then((response) => {
-      window.addEventListener('beforeunload', this.props.client.leave)
-      if(response === 'OK'){
-        this.setState({
-          status: 'looking'
-        })
-      }
-    }).catch(() => {
-      
+  handleRegister() {    
+    this.setState({
+      status: 'looking'
     })
   }
 
@@ -66,7 +59,9 @@ class App extends React.Component {
     switch (this.state.status) {
       case 'registering':
         return(
-          <NameForm onRegister={this.handleRegister}/>
+          <NameForm 
+            client={this.props.client}
+            onRegister={this.handleRegister}/>
         )
       case 'looking':
         return(

@@ -73,10 +73,11 @@ input:focus {
 #registration {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 8fr;
   grid-template-areas: 
     "."
-    "form"
+    "form";
+  height: 100%;
 }
 
 .smallForm {
@@ -93,6 +94,13 @@ h2 {
   letter-spacing: 1px;
   font-size: 4.2rem;
   line-height: 1.25;
-  font-size: 3rem;
+  font-size: 8vmin;
   color: white;
+}
+
+.error {
+  margin: 5px;
+  color: #C14566;
+  font-size: 1.5rem;
+  text-align: right;
 }
